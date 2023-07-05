@@ -9,3 +9,11 @@ output "sample_string" {
 output "sample_number" {
   value = var.sample_number
 }
+
+output "fruits" {
+  value = length(var.fruits)
+}
+
+output "map_list" {
+  value = var.map_list
+}

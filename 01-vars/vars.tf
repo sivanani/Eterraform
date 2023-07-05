@@ -17,3 +17,14 @@ variable "sample_list" {
   
 }
 
+variable "map_list" {
+  default = {
+    string="hello",
+    boolean=true,
+    number=100
+  }
+}
+
+variable "fruits" {
+  default = ["apple","orange","banana"]  
+}
