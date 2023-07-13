@@ -26,6 +26,7 @@ resource "aws_instance" "frontend" {
 resource "aws_instance" "mongodb" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "mongodb"
@@ -35,6 +36,7 @@ resource "aws_instance" "mongodb" {
 resource "aws_instance" "catalogue" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "catalogue"
@@ -44,6 +46,7 @@ resource "aws_instance" "catalogue" {
 resource "aws_instance" "Redis" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "Redis"
@@ -53,6 +56,7 @@ resource "aws_instance" "Redis" {
 resource "aws_instance" "user" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "user"
@@ -62,6 +66,7 @@ resource "aws_instance" "user" {
 resource "aws_instance" "cart" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "cart"
@@ -71,6 +76,7 @@ resource "aws_instance" "cart" {
 resource "aws_instance" "MySQL" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "MySQL"
@@ -80,6 +86,7 @@ resource "aws_instance" "MySQL" {
 resource "aws_instance" "shipping" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "shipping"
@@ -89,6 +96,7 @@ resource "aws_instance" "shipping" {
 resource "aws_instance" "RabbitMQ" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "RabbitMQ"
@@ -98,6 +106,7 @@ resource "aws_instance" "RabbitMQ" {
 resource "aws_instance" "Payment" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "Payment"
@@ -107,6 +116,7 @@ resource "aws_instance" "Payment" {
 resource "aws_instance" "Dispatch" {
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
+  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
     Name = "Dispatch"
