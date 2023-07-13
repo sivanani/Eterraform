@@ -7,10 +7,10 @@ output "security_group_id" {
   value = data.aws_security_group.selected.id
 }
 
-output "security_group_id" {
+output "security_group_id2" {
   value = data.aws_security_group.selected.name
 }
 
-output "security_group_id" {
+output "security_group_id3" {
   value = data.aws_security_group.selected.arn
 }
