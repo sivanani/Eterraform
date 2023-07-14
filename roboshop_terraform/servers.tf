@@ -130,91 +130,91 @@ resource "aws_instance" "instance" {
 # }
 
 
-resource "aws_route53_record" "frontend" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "frontend-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.frontend.private_ip] 
-}
+# resource "aws_route53_record" "frontend" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "frontend-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.frontend.private_ip] 
+# }
 
-resource "aws_route53_record" "mongodb" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "mongodb-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.mongodb.private_ip] 
-}
+# resource "aws_route53_record" "mongodb" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "mongodb-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.mongodb.private_ip] 
+# }
 
-resource "aws_route53_record" "catalogue" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "catalogue-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.catalogue.private_ip]
-}
+# resource "aws_route53_record" "catalogue" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "catalogue-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.catalogue.private_ip]
+# }
 
-resource "aws_route53_record" "Redis" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "Redis-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.Redis.private_ip]
-}
+# resource "aws_route53_record" "Redis" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "Redis-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.Redis.private_ip]
+# }
 
-resource "aws_route53_record" "user" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "user-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.user.private_ip]
-}
+# resource "aws_route53_record" "user" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "user-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.user.private_ip]
+# }
 
 
-resource "aws_route53_record" "cart" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "cart-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.cart.private_ip]
-}
+# resource "aws_route53_record" "cart" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "cart-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.cart.private_ip]
+# }
 
-resource "aws_route53_record" "MySQL" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "MySQL-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.MySQL.private_ip]
-}
+# resource "aws_route53_record" "MySQL" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "MySQL-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.MySQL.private_ip]
+# }
 
-resource "aws_route53_record" "shipping" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "shipping-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.shipping.private_ip]
-}
+# resource "aws_route53_record" "shipping" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "shipping-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.shipping.private_ip]
+# }
 
-resource "aws_route53_record" "RabbitMQ" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "RabbitMQ-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.RabbitMQ.private_ip]
-}
+# resource "aws_route53_record" "RabbitMQ" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "RabbitMQ-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.RabbitMQ.private_ip]
+# }
 
-resource "aws_route53_record" "Payment" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "Payment-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.Payment.private_ip]
-}
+# resource "aws_route53_record" "Payment" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "Payment-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.Payment.private_ip]
+# }
 
-resource "aws_route53_record" "Dispatch" {
- zone_id = "Z05651432BEIDAOZH30YR"
- name = "Dispatch-dev.devopsr72.online"
- type = "A"
- ttl = 30
- records = [aws_instance.Dispatch.private_ip]
-}
+# resource "aws_route53_record" "Dispatch" {
+#  zone_id = "Z05651432BEIDAOZH30YR"
+#  name = "Dispatch-dev.devopsr72.online"
+#  type = "A"
+#  ttl = 30
+#  records = [aws_instance.Dispatch.private_ip]
+# }
