@@ -13,115 +13,121 @@ variable "instance_type" {
    default = "t3.micro"
 }
 
-resource "aws_instance" "frontend" {
+variable "components" {
+   default = ["frontend","mongodb","catalogue"]
+}
+
+
+resource "aws_instance" "instance" {
+  count = length(var.components)
   ami = data.aws_ami.centos.image_id
   instance_type = var.instance_type
   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
   tags = {
-    Name = "frontend"
+    Name = var.components[count.index]
   }
 }
 
-resource "aws_instance" "mongodb" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "mongodb" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "mongodb"
-  }
-}
+#   tags = {
+#     Name = "mongodb"
+#   }
+# }
 
-resource "aws_instance" "catalogue" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "catalogue" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "catalogue"
-  }
-}
+#   tags = {
+#     Name = "catalogue"
+#   }
+# }
 
-resource "aws_instance" "Redis" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "Redis" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "Redis"
-  }
-}
+#   tags = {
+#     Name = "Redis"
+#   }
+# }
 
-resource "aws_instance" "user" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "user" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "user"
-  }
-}
+#   tags = {
+#     Name = "user"
+#   }
+# }
 
-resource "aws_instance" "cart" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "cart" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "cart"
-  }
-}
+#   tags = {
+#     Name = "cart"
+#   }
+# }
 
-resource "aws_instance" "MySQL" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "MySQL" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "MySQL"
-  }
-}
+#   tags = {
+#     Name = "MySQL"
+#   }
+# }
 
-resource "aws_instance" "shipping" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "shipping" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "shipping"
-  }
-}
+#   tags = {
+#     Name = "shipping"
+#   }
+# }
 
-resource "aws_instance" "RabbitMQ" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "RabbitMQ" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "RabbitMQ"
-  }
-}
+#   tags = {
+#     Name = "RabbitMQ"
+#   }
+# }
 
-resource "aws_instance" "Payment" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "Payment" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "Payment"
-  }
-}
+#   tags = {
+#     Name = "Payment"
+#   }
+# }
 
-resource "aws_instance" "Dispatch" {
-  ami = data.aws_ami.centos.image_id
-  instance_type = var.instance_type
-  vpc_security_group_ids = [data.aws_security_group.allow_all.id]
+# resource "aws_instance" "Dispatch" {
+#   ami = data.aws_ami.centos.image_id
+#   instance_type = var.instance_type
+#   vpc_security_group_ids = [data.aws_security_group.allow_all.id]
 
-  tags = {
-    Name = "Dispatch"
-  }
-}
+#   tags = {
+#     Name = "Dispatch"
+#   }
+# }
 
 
 resource "aws_route53_record" "frontend" {
